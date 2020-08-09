@@ -1,0 +1,37 @@
+.heading{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-bottom: 2%;
+
+}
+
+
+.story-body{
+    text-align: center;
+    
+    padding-bottom: 2%;
+}
+.story_content{
+    text-align: center;
+}
+.story_image{
+    text-align: center;
+}
+
+
+.page-content{
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 3%;
+}
+
+#user-story{
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+input[type = 'text']{
+    text-align: center;
+}
+
+

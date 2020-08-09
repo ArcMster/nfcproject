@@ -1,0 +1,13 @@
+#all-elements{
+    text-align: center; 
+    padding-top: 100px;
+}
+
+iframe{
+    margin-bottom: 3%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.video-headings{
+    font-family:fantasy; 
+    padding-bottom:2%;
+}

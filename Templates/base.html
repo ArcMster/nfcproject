@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href = "{% static 'bootstrap.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css.css' %}" type="text/css">
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar fixed-top">
+      <a class="navbar-brand" href="home">HOME</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+        
+        <a class="nav-item nav-link active" href="videos">Videos <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link active" href="stories">Stories <span class="sr-only">(current)</span></a>
+
+        {% if user.is_authenticated %}
+
+        <a class="nav-item nav-link active" href="logout">Logout <span class="sr-only">(current)</span></a>
+        
+
+        {% else %}
+
+        <a class="nav-item nav-link active" href="signup">Register <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link active" href="login">Login <span class="sr-only">(current)</span></a>
+
+        {% endif %}
+        <!--<div class="navbar-nav ml-md-auto" >
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+        </div>-->
+        
+        
+        
+        </div>
+      </div>
+      
+      <!--<form class="form-inline" action="search_keyword">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search Keyword" aria-label="Search" name="searchbar">
+        <input type="submit" class="btn btn-outline-success my-2 my-sm-0" value="Search">-->
+        <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+      <!--</form>-->
+      </nav>  
+
+  </head>
+<body>
+    {% block content %}
+    
+    
+    {% endblock %}
+</body>
+
+<div class="footer">
+  <div class="footer-content">
+    <div class="footer-section about">
+      <h1 class = "logo-text"><span>Page</span></h1>
+      <p>
+        Become a Pro with these valuable skills. Start Your Course Today. Join Millions of Learners From Already Learning On Udemy! 40M Students Enrolled. Download To Your Phone. Over 130,000 Courses. 30-Day Money Guarantee. Expert Instructors. Lifetime Access.
+      </p>
+
+      <div class="contact">
+        <span><i class="fas fa-phone">&nbsp; 123-456-789</i></span>
+        <span><i class="fas fa-envelope">&nbsp; Email@email.com</i></span>
+      </div>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+    <div class="footer-section links">
+      <br>
+      <ul>
+        <a href="#"><li>Events</li></a>
+        <a href="#"><li>Events</li></a>
+        <a href="#"><li>Events</li></a>
+      </ul>
+    </div>
+
+    <div class="footer-section contact-form">
+      <h2>Contact Us</h2>
+      <form 
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; ArcMster
+  </div>
+</div>
+
+
+<!--<div class="footer">
+  <div class="container-fluid" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+    <footer class="container py-3" id="footers">
+      <div class="row" id="footer-rows">
+
+        <div id="fcol1" class="col-3 col-md">
+          <h5>
+            About us
+          </h5>
+
+          this is the field for about this page
+        </div>
+
+        <div id="fcol2" class="col-3 col-md">
+          <h5>
+            Contact
+          </h5>
+          <ul style="list-style: none;">
+            <li>list item 1</li>
+            <li>list item 2</li>
+            <li>list item 3</li>
+          </ul>
+        </div>
+
+        <div id="fcol3" class="col-3 col-md" >
+          <h5 style="text-align: center;">
+            Links
+          </h5>
+          <ul style="list-style: none;">
+            <li>list item 1</li>
+            <li>list item 2</li>
+            <li>list item 3</li>
+          </ul>
+        </div>
+      </div>
+      
+    </footer>
+  </div>
+</div>-->
+</html>
