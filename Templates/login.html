@@ -2,11 +2,12 @@
 
 {% block content %}
 
-<div class="container-fluid" style="margin-top: 100px; margin-left: 35%">
+<div class="container-fluid" style="margin-top: 100px;">
     <h3 style="margin-bottom: 50px;">Welcome to the club</h3>
     {% for message in messages %}
     <h4>{{message}}</h4>
     {% endfor %}
+    <h4>{{signup_message}}</h4>
     <form action="auth" method="POST">
         {% csrf_token %}
         <input type="text" class="form-control" name="userid" placeholder="Userid" style="width: 25%;">
@@ -17,6 +18,8 @@
     <h3>Haven't created an account yet ?</h3> <br>
 
     click <a href="signup">here</a> to create an account
+    <br>
+    <br>
 </div>
 
 

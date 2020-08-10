@@ -4,19 +4,20 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'videos.css' %}" type="text/css">
 <div class="container-fluid" id="all-elements">
-
+    <div class="story_heading" style="margin-bottom: 25px;">
     <h2>
         Need help ?
     </h2>
     Following videos might help you with your issues.<br>
     Watch them, review them and support others
+    </div>
 
     {% for i in videos %}
     <h3 class="video-headings" style="padding-top: 2%;">
         {{i.name}}
     </h3>
 
-    <iframe width="560" height="315" src="{{i.video_link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+    <iframe width="350" height="315" src="{{i.video_link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-bottom: 50px;"></iframe>
 
     {% endfor %}
     

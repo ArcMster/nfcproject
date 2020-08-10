@@ -6,7 +6,7 @@ from datetime import datetime
 
 def sendemail(subject,body,email):
     msg = EmailMessage()
-    msg['From'] = '"NFC Club" <nfclub56@gmail.com>'
+    msg['From'] = '"Sample" <nfclub56@gmail.com>'
     msg['To'] = email
     msg['Subject'] = subject
     msg.set_content(body)
@@ -44,18 +44,12 @@ mycursor.execute("SELECT * FROM auth_user")
 
 results = mycursor.fetchall()
 for row in results:
-    print(row)
-    print('1',row[1])
-    print('2: ',row[2],' 3:',row[3],' 4: ',row[4],' 5: ',row[5],' 6: ',row[6])
-    print(row[7])
-    email_list.append(str(row[7]))
+    email_list.append(str(row[6]))
 mycursor.execute("SELECT * FROM nfcapp_quote_list")
 qlist = mycursor.fetchall()
 #qlist = conn.execute("SELECT * FROM nfcapp_quote_list")
 
 for row in qlist:
-    print(row[1])
-    print(row[2])
     if day == str(row[1]):
         print('yes found')
         tday = str(row[1])
@@ -67,16 +61,13 @@ for row in qlist:
 
 
 conn.close()
-subject = "Daily Quote"
-body = "Hi, \n\n" + quote + "\n\n" + "Thanks"
-print(email_list)
+subject = "Sample subject"
+body = quote
 
 for i in email_list:
-
+    sendemail(subject,body,i)
     try:
-
         sendemail(subject,body,i)
-        print('email sent')
     except:
         pass
 

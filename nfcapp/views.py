@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
-from .models import Stories, Videos
+from .models import Stories, Videos, Emails
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+from email.message import EmailMessage
+import smtplib
 
 
 # Create your views here.
@@ -75,14 +77,21 @@ def register(request):
         else:
             user = User.objects.create_user(username=uname,password = password1,email = email, first_name = fname, last_name = lname)
             user.save()
-            return redirect('login')
+            body = "A new user has been registered \nFirst name: " + user.first_name + "\nEmail: " + user.email + "\n\n Thanks"
+            email_list = Emails.objects.all()
+            for i in email_list:
+                sendemail('New registration',body,str(i.email))
+            body1 = "Hi " + user.first_name + "\nWelcome to No fap club.\n\nAll the best for your No fap journey.\n\nThanks,\nNFC"
+            sendemail('Welcome to NFC',body1,str(user.email))
+
+            return render(request,'login.html',{'signup_message':'Your account has been created, please login to continue'})
     else:
         messages.info(request,'Passwords not matching..!')
         return redirect('signup')
 
 
 
-    return HttpResponse(fname)
+    
 
 #Created for test purpose
 def next_page(request,n):
@@ -94,3 +103,20 @@ def next_page(request,n):
 def logout(request):
     auth.logout(request)
     return render(request,'home.html')
+
+
+def sendemail(subject,body,email):
+    msg = EmailMessage()
+    msg['From'] = '"NFC Club" <nfclub56@gmail.com>'
+    msg['To'] = email
+    msg['Subject'] = subject
+    msg.set_content(body)
+    smtplibObj = smtplib.SMTP('smtp.gmail.com',587)
+    smtplibObj.ehlo()
+    smtplibObj.starttls()
+    smtplibObj.login("nfclub56@gmail.com", "Red@1234")
+        
+    smtplibObj.send_message(msg)
+    smtplibObj.quit()
+
+

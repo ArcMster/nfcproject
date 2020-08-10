@@ -13,7 +13,7 @@
     <div class="storyarea">
         {% for i in stories %}
         <div class="stories">
-            <div class="story_content">
+            <div class="story_content" style="margin-bottom: 50px;">
                 <div class="story-heading">
 
                     <h3>
@@ -43,7 +43,7 @@
     Your can also add your stories and inspire others
 
 </div>
- <button class="btn btn-primary" onclick="location.href = 'page/{{n}}'">Next page</button>
+ 
 
  
 <div class="container-fluid" style="text-align: center;">
@@ -60,7 +60,7 @@
     </form>
     {% else %}
 
-        You are not allowed here
+        <button class="btn btn-secondary" onclick="location.href = '/login'" style="margin-bottom: 5%;">Sign in to add your story</button> 
     {% endif %}
     
 </div>

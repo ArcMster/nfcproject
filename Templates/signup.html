@@ -2,19 +2,19 @@
 
 {% block content %}
 
-<div class="container-fluid" style="margin-top: 100px; margin-left: 35%">
+<div class="container-fluid" style="margin-top: 100px;">
     <h3 style="margin-bottom: 50px;">Welcome to the club</h3>
     {% for message in messages %}
     <h4>{{message}}</h4>
     {% endfor %}
     <form action="register" method="POST">
         {% csrf_token %}
-        <input type="text" class="form-control" name="fname" placeholder="First name" style="width: 25%; margin-top: 20px;">
-        <input type="text" class="form-control" name="lname" placeholder="Last Name" style="width: 25%; margin-top: 20px;">
-        <input type="email" class="form-control" name="email" placeholder="Email id" style="width: 25%; margin-top: 20px;">
-        <input type="text" class="form-control" name="uname" placeholder="User Name" style="width: 25%; margin-top: 20px;">
-        <input type="password" class="form-control" name="password1" placeholder="Password" style="margin-top: 20px; width: 25%">
-        <input type="password" class="form-control" name="password2" placeholder="Confirm Password" style="margin-top: 20px; width: 25%">
+        <input type="text" class="form-control" name="fname" placeholder="First name" style="width: 50%; margin-top: 20px;" required>
+        <input type="text" class="form-control" name="lname" placeholder="Last Name" style="width: 50%; margin-top: 20px;" required>
+        <input type="email" class="form-control" name="email" placeholder="Email id" style="width: 50%; margin-top: 20px;" required>
+        <input type="text" class="form-control" name="uname" placeholder="User Name" style="width: 50%; margin-top: 20px;" required>
+        <input type="password" class="form-control" name="password1" placeholder="Password" style="margin-top: 20px; width: 50%">
+        <input type="password" class="form-control" name="password2" placeholder="Confirm Password" style="margin-top: 20px; width: 50%">
         <input type="submit"class="btn btn-success" value = "Create Account" style="margin-top: 20px; margin-bottom:50px">
     </form>
 

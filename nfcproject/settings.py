@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'ckeditor',
     'nfcapp.apps.NfcappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -80,6 +81,17 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'nofapclub$nfcdatabase',
+        'USER': 'nofapclub',
+        'PASSWORD': 'Red@1234',
+        'HOST':'nofapclub.mysql.pythonanywhere-services.com',
+
+    }
+}'''
 
 
 # Password validation
